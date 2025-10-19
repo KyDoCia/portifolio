@@ -1,5 +1,0 @@
-- [x] Move section indicator to left side in style.css
-- [x] Change hero section text alignment to left
-- [x] Change about-content alignment to left
-- [ ] Translate and improve texts in index.html to Portuguese
-- [ ] Test the layout

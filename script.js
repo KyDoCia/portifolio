@@ -54,6 +54,21 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Close menu when clicking on a link
+document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -203,3 +218,20 @@ indicators.forEach(indicator => {
 
 window.addEventListener('scroll', updateActiveIndicator);
 updateActiveIndicator(); // Initial call
+
+// Show more projects functionality
+const showMoreBtn = document.getElementById('show-more-btn');
+const hiddenProjects = document.querySelectorAll('.portfolio-item.hidden');
+
+showMoreBtn.addEventListener('click', () => {
+    hiddenProjects.forEach(project => {
+        project.classList.toggle('hidden');
+    });
+
+    // Toggle button text
+    if (showMoreBtn.textContent === 'Show More Projects') {
+        showMoreBtn.textContent = 'Show Less Projects';
+    } else {
+        showMoreBtn.textContent = 'Show More Projects';
+    }
+});
